@@ -5,8 +5,9 @@ jobs:
     docker:
       - image: nginx
     steps:
+      - checkout
       - run: ls
-      - run: pwd
+      
 workflows:
   build-workflow:
     jobs:
