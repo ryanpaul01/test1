@@ -7,9 +7,7 @@ jobs:
     steps:
       - checkout
       - run: ls -a
-      - run: apt update
-      - run: apt install -y curl
-      - run: curl 127.0.0.1
+      - run: service nginx status
       
 workflows:
   build-workflow:
