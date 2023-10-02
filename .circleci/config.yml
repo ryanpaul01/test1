@@ -5,13 +5,9 @@ jobs:
     docker:
       - image: nginx
     steps:
-      - file_copy
-      - run:
-          name: "file-list"
-          command: "ls"
-
+      - run: echo ls
 workflows:
-  website-workflow:
+  build-workflow:
     jobs:
       - build
       
