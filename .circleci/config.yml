@@ -7,7 +7,7 @@ jobs:
     steps:
       - file_copy
       - run:
-          name: "file list"
+          name: "file-list"
           command: "ls"
 
 workflows:
