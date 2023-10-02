@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run: ls -a
-      - run: whereis nginx
-      - run: curl http://127.0.0.1
+      - run: uname -a
+      - run: ps -ef
       
 workflows:
   build-workflow:
