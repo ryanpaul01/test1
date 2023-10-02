@@ -7,10 +7,11 @@ jobs:
     steps:
       - file_copy
       - run:
-          name: "Say hello"
+          name: "file list"
           command: "ls"
 
 workflows:
   website-workflow:
     jobs:
-      - build
+      - buildgit pull
+      
