@@ -7,8 +7,9 @@ jobs:
     steps:
       - checkout
       - run: ls -a
-      - run: uname -a
-      - run: ps -ef
+      - run: apt update
+      - run: apt install -y curl
+      - run: curl 127.0.0.1
       
 workflows:
   build-workflow:
