@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: ls -a
-      - run: cp -R html/* /usr/share/nginx/html/*
+      - run: whereis nginx
       - run: curl http://127.0.0.1
       
 workflows:
