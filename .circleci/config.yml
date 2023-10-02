@@ -5,7 +5,8 @@ jobs:
     docker:
       - image: nginx
     steps:
-      - run: echo ls
+      - run: ls
+      - run: pwd
 workflows:
   build-workflow:
     jobs:
