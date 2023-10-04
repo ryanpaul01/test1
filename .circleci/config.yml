@@ -2,9 +2,22 @@ version: 2.1
 orbs:
   docker: circleci/docker@2.4.0
 
-workflows:
-  build-docker-image-only:
-    jobs:
-      - docker/publish:
+jobs:
+  build-and-push:
+    executor: docker/docker
+    steps:
+      - setup_remote_docker
+      - checkout
+      - docker/check
+      - docker/build:
           image: ryanpaul01/test1
-          update-description: true
+      - docker/push:
+          digest-path: /tmp/digest.txt
+          image: ryanpaul01/test1
+      - run:
+          command: |
+            echo "Digest is: $(</tmp/digest.txt)"
+workflows:
+  commit:
+    jobs:
+      - build-and-push
