@@ -8,7 +8,7 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check
+
       - docker/build:
           image: ryanpaul01/test1
       - docker/publish:
