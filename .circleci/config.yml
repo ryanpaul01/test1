@@ -1,18 +1,10 @@
 version: 2.1
+orbs:
+  docker: circleci/docker@2.4.0
 
-jobs:
-  build:
-    docker:
-      - image: nginx
-    steps:
-      - checkout
-      - run: cp -R ./html/* /usr/share/nginx/html
-      - run: service nginx restart
-      - run: curl localhost
-      - run: ls /usr/share/nginx/html
-      
 workflows:
-  build-workflow:
+  build-docker-image-only:
     jobs:
-      - build
-      
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          update-description: true
