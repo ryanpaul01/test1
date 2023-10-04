@@ -6,8 +6,9 @@ jobs:
       - image: nginx
     steps:
       - checkout
-      - run: ls -a
-      - run: docker ps
+      - run: cp -R ./html/* /usr/share/nginx/html
+      - run: service nginx restart
+      - run: curl localhost
       
 workflows:
   build-workflow:
