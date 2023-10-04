@@ -8,12 +8,9 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check
+
       - docker/build:
           image: ryanpaul01/test1
-          auth:
-            username: $DOCKER_LOGIN
-            password: $DOCKER_PASSWORD
       - docker/push:
           digest-path: /tmp/digest.txt
           image: ryanpaul01/test1
