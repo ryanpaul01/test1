@@ -9,6 +9,7 @@ jobs:
       - run: cp -R ./html/* /usr/share/nginx/html
       - run: service nginx restart
       - run: curl localhost
+      - run: ls /usr/share/nginx/html
       
 workflows:
   build-workflow:
