@@ -6,10 +6,8 @@ jobs:
   build-and-push:
     executor: docker/docker
     steps:
-      - setup_remote_docker
       - checkout
-      - docker/check:
-          use-docker-credentials-store: true
+      - docker/check
       - docker/build:
           image: ryanpaul01/test1
       - docker/push:
