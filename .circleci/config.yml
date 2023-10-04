@@ -11,7 +11,7 @@ jobs:
       - docker/check
       - docker/build:
           image: ryanpaul01/test1
-      - docker/push:
+      - docker/publish:
           digest-path: /tmp/digest.txt
           image: ryanpaul01/test1
           use-docker-credentials-store: true
