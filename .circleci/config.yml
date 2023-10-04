@@ -8,7 +8,9 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check
+      - docker/check:
+          docker-username: DOCKER_LOGIN
+          docker-password: DOCKER_PASSWORD
       - docker/build:
           image: ryanpaul01/test1
       - docker/push:
