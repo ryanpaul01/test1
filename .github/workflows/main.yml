@@ -24,8 +24,6 @@ jobs:
         with:
           images: |
             ryanpaul01/test1
-          tags: |
-            type=sha
       - name: Build & Push
         uses: docker/build-push-action@v5
         with:
