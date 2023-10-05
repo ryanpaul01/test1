@@ -31,5 +31,4 @@ jobs:
         with:
           context: .
           load: true
-          push: true
           tags: ${{ steps.meta.outputs.tags }}
